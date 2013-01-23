@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97aa0a2e-b0f7-4de8-a380-2dbdc5ba9753" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Mitglied.scala" afterPath="$PROJECT_DIR$/app/models/Mitglied.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/MitgliederController.scala" afterPath="$PROJECT_DIR$/app/controllers/MitgliederController.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/mitglieder_details.scala.html" afterPath="$PROJECT_DIR$/app/views/mitglieder_details.scala.html" />
     </list>
     <ignored path="gartenApp2.1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -11,7 +10,7 @@
     <file path="/SBT" changelist="97aa0a2e-b0f7-4de8-a380-2dbdc5ba9753" time="1358796112401" ignored="false" />
     <file path="/Mitglied.scala" changelist="97aa0a2e-b0f7-4de8-a380-2dbdc5ba9753" time="1358981741580" ignored="false" />
     <file path="$PROJECT_DIR$/target/scala-2.9.1/src_managed/main/routes_reverseRouting.scala" changelist="97aa0a2e-b0f7-4de8-a380-2dbdc5ba9753" time="1358720022568" ignored="false" />
-    <file path="/mitglieder_details.scala.html" changelist="97aa0a2e-b0f7-4de8-a380-2dbdc5ba9753" time="1358721229314" ignored="false" />
+    <file path="/mitglieder_details.scala.html" changelist="97aa0a2e-b0f7-4de8-a380-2dbdc5ba9753" time="1358982200560" ignored="false" />
     <file path="/MitgliederController.scala" changelist="97aa0a2e-b0f7-4de8-a380-2dbdc5ba9753" time="1358981787278" ignored="false" />
     <file path="/routes" changelist="97aa0a2e-b0f7-4de8-a380-2dbdc5ba9753" time="1358719997997" ignored="false" />
     <file path="/mitglieder.scala.html" changelist="97aa0a2e-b0f7-4de8-a380-2dbdc5ba9753" time="1358728551174" ignored="false" />
@@ -105,6 +104,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="mitglieder_details.scala.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/mitglieder_details.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="48" selection-start="678" selection-end="678" vertical-scroll-proportion="0.21984217">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="1.sql" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/evolutions/default/1.sql">
           <provider selected="true" editor-type-id="text-editor">
@@ -114,10 +122,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MitgliederController.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MitgliederController.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/MitgliederController.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="69" selection-start="4039" selection-end="4039" vertical-scroll-proportion="0.26344675">
+            <state line="114" column="69" selection-start="4039" selection-end="4039" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#21#66#0" expanded="true" />
               </folding>
@@ -195,7 +203,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/Jahresabrechnung.scala" />
         <option value="$PROJECT_DIR$/app/views/abrechnungen.scala.html" />
         <option value="$PROJECT_DIR$/public/stylesheets/print.css" />
         <option value="$PROJECT_DIR$/app/views/abrechnung_print.scala.html" />
@@ -211,6 +218,7 @@
         <option value="$PROJECT_DIR$/project/Build.scala" />
         <option value="$PROJECT_DIR$/app/models/Mitglied.scala" />
         <option value="$PROJECT_DIR$/app/controllers/MitgliederController.scala" />
+        <option value="$PROJECT_DIR$/app/views/mitglieder_details.scala.html" />
       </list>
     </option>
   </component>
@@ -407,6 +415,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -786,11 +798,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/abrechnung_print.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="32" selection-start="1262" selection-end="1262" vertical-scroll-proportion="-0.625" />
@@ -858,13 +865,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Mitglied.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="39" selection-start="4135" selection-end="4135" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/evolutions/default/1.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="21" selection-start="135" selection-end="135" vertical-scroll-proportion="-3.1034484">
@@ -881,10 +881,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/MitgliederController.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="69" selection-start="4039" selection-end="4039" vertical-scroll-proportion="0.26344675">
+        <state line="114" column="69" selection-start="4039" selection-end="4039" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#21#66#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Mitglied.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="39" selection-start="4135" selection-end="4135" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/mitglieder_details.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="48" selection-start="678" selection-end="678" vertical-scroll-proportion="0.21984217">
+          <folding />
         </state>
       </provider>
     </entry>
