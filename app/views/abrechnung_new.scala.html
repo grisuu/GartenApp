@@ -1,0 +1,24 @@
+@(mitForm: Form[AbrechnungsDaten])
+@import helper._
+
+@sub = {
+    <h2>Submenu</h2>
+}
+@js = {
+    <script type="text/javascript" lang="javascript">
+        $(document).ready(function() {
+            $('#pacht_all').click(function() {
+                $('input[name^="pacht["]').attr('checked', this.checked);
+            });
+        });
+    </script>
+}
+@main(title = "Abrechnung - neue Abrechnung", submenu = sub, javascript = js) {
+    <h2>Abrechnungsdetails</h2>
+
+    <div class="grid_100">
+        @form(action = routes.AbrechnungsController.processNewAbrechung, args = 'id -> "addabrechnungform") {
+            @abrechnung_form(mitForm)
+        }
+    </div>
+}

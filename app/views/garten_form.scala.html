@@ -1,0 +1,40 @@
+@(gartenForm: Form[Garten])
+@import helper._
+
+@sub = {
+    <h2>Submenu</h2>
+}
+
+@main(title = "Gartendetails - " + gartenForm("nr").value.getOrElse("neuer Garten"), submenu = sub) {
+    <h2>Gartendetails</h2>
+
+    <div class="grid_100">
+
+        @form(action = routes.GartenController.processNewGarten, args = 'id -> "addgartenform") {
+            <fieldset class="grid_25 content boxshadow">
+                @inputText(
+                    field = gartenForm("nr"),
+                    args = '_label -> "Gartennr."
+                )
+                @inputText(
+                    field = gartenForm("fläche"),
+                    args = '_label -> "Fläche in m²"
+                )
+                @inputText(
+                    field = gartenForm("laube"),
+                    args = '_label -> "Laubenfläche in m²"
+                )
+                @inputText(
+                    field = gartenForm("grundB"),
+                    args = '_label -> "Grundsteuer B"
+                )
+
+            </fieldset>
+
+            <p class="buttons clear">
+                <input type="submit" id="submit">
+            </p>
+        }
+
+    </div>
+}

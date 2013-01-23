@@ -1,0 +1,72 @@
+@(vertraege: List[Pachtvertrag])(implicit flash: Flash)
+@import helper._
+
+@sub = {
+    <ul>
+        <li><a href="/pachtvertraege/new"><button>hinzufügen</button></a></li>
+        <li><a href="/pachtvertraege/add"><button>speichern</button></a></li>
+        <li><a href="/pachtvertraege/import"><button>importieren</button></a></li>
+    </ul>
+}
+@js = {
+    <script type="text/javascript">
+        function loadVertragDetails(nr) {
+            var url = "/pachtvertraege/details/" + nr
+            $.get(url, function(result) {
+                $('#pachtvertrag_details').html(result);
+            });
+        }
+    </script>
+}
+
+@main(title = "GartenApp2 goes Web! - Pachtverträge", submenu = sub, javascript = js) {
+    <h2>Pachtverträge</h2>
+
+
+    @(flash.data.map {
+        case ("info", msg) => <div class="msg_info">{msg}</div>
+        case ("error", msg) => <div class="msg_error">{msg}</div>
+    })
+
+    <div class="grid_66">
+        <div class="content boxshadow">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nr</th>
+                        <th>Beginn</th>
+                        <th>Pächter</th>
+                        <th>Garten</th>
+                        <th colspan="2">Optionen</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @vertraege.map { v =>
+                    <tr onclick="loadVertragDetails(@v.nr)">
+                        <td>@v.nr</td>
+                        <td>@v.begin.toString("dd.MM.yy")</td>
+                        <td>@v.mitglied.nachVorname</td>
+                        <td>@v.garten.nr</td>
+                        <td><a href="/pachtvertraege/delete/@v.nr">X</a>&nbsp;</td>
+                        <td>&nbsp;<a href="/pachtvertraege/show/@v.nr">D</a></td>
+                    </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Anzahl:</td>
+                        <td>@vertraege.size</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <div class="grid_33" style="position:fixed; right:0px;">
+        <div class="content boxshadow">
+            <div id="pachtvertrag_details"></div>
+        </div>
+    </div>
+}

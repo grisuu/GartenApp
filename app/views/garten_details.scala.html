@@ -1,0 +1,56 @@
+@(garten: Garten, ablForm: Form[Ablesung])
+@import helper._
+<div class="content boxshadow">
+    <h4>Details:</h4>
+    <dl class="keyvalue clearfix">
+        <dt>Gartennr.:</dt><dd class="right">@garten.nr</dd>
+        <dt>Fläche:</dt><dd class="right">@(garten.fläche)</dd>
+        <dt>Laube:</dt><dd class="right">@garten.laube</dd>
+        <dt>Grundsteuer B:</dt><dd class="right">@garten.grundB</dd>
+    </dl>
+
+    @form(action = routes.GartenController.processNewAblesung(garten.nr, "strom"), args = 'id -> "addstromablform") {
+        <h4>Energieablesung (Verbrauch):</h4>
+        <dl class="keyvalue clearfix">
+            <dt>
+                @inputDate(
+                    field = ablForm("datum"),
+                    args  = '_label -> "Datum", 'size -> 12
+                )
+            </dt>
+            <dd>
+                @inputText(
+                    field = ablForm("wert"),
+                    args  = '_label -> "Wert", 'size -> 18
+                )
+                <input type="submit" value="Hinzufügen" style="width:150px" />
+            </dd>
+
+            @(garten.stromzähler.ablesungen.map { a =>
+                <dt>{a.datum.toString("dd.MM.yy")}:</dt><dd class="right">{a.wert} kWh ({garten.stromzähler.verbrauch(a)} kWh)</dd>
+            })
+        </dl>
+    }
+
+    @form(action = routes.GartenController.processNewAblesung(garten.nr, "wasser"), args = 'id -> "addwasserablform") {
+        <h4>Wasserablesung (Verbrauch):</h4>
+        <dl class="keyvalue clearfix">
+            <dt>
+                @inputDate(
+                field = ablForm("datum"),
+                args  = '_label -> "Datum", 'size -> 12
+                )
+            </dt>
+            <dd>
+                @inputText(
+                field = ablForm("wert"),
+                args  = '_label -> "Wert", 'size -> 18
+                )
+                <input type="submit" value="Hinzufügen" style="width:150px" />
+            </dd>
+            @garten.wasseruhr.ablesungen.map { a =>
+                <dt>@a.datum.toString("dd.MM.yy"):</dt><dd class="right">@a.wert m³ (@garten.wasseruhr.verbrauch(a) m³)</dd>
+            }
+        </dl>
+    }
+</div>

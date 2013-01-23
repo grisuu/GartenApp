@@ -1,0 +1,80 @@
+@(abrechnungen: collection.mutable.HashMap[Int, Jahresabrechnung], selAbrechnung: Option[Jahresabrechnung] = None)(implicit flash: Flash)
+@import helper._
+
+@sub = {
+    <ul>
+        <li><a href="/abrechnungen/new"><button>hinzufügen</button></a></li>
+        <li><a href="/abrechnungen/add"><button>speichern</button></a></li>
+        <li><a href="/abrechnungen/importAblesungen"><button>Ablesungen imp.</button></a></li>
+    </ul>
+}
+
+@js = {
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#abrtabs').tabs();
+        })
+    </script>
+}
+@main(title = "GartenApp2 goes Web! - Abrechnungen", submenu = sub, javascript = js) {
+    <h2>Abrechnungen</h2>
+
+    @(flash.data.map {
+        case ("info", msg) => <div class="msg_info">{msg}</div>
+        case ("error", msg) => <div class="msg_error">{msg}</div>
+    })
+
+    <div class="grid_66">
+        <section class="content boxshadow">
+            <div id="abrtabs">
+                <ul>
+                    @for((jahr, jAbr) <- abrechnungen) {
+                        <li><a href="#tab-@jahr">@jahr</a></li>
+                    }
+                </ul>
+                @for((jahr, a: Jahresabrechnung) <- abrechnungen) {
+                    <div id="tab-@jahr">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Datum</th>
+                                    <th>Garten</th>
+                                    <th>Mitglied</th>
+                                    <th>Gesamt</th>
+                                    <th colspan="2">Optionen</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @for((anr, abr) <- a.abrechnungen) {
+                                    <tr onclick="loadGartenDetails(jahr)">
+                                        <td>@abr.datum.toString("dd.MM.yyyy")</td>
+                                        <td>@abr.pachtvertrag.garten</td>
+                                        <td>@abr.pachtvertrag.mitglied.nachVorname</td>
+                                        <td>@("%.2f EUR" format abr.sum)</td>
+                                        <td>&nbsp;<a href="/abrechnungen/show/@a.jahr">D</a></td>
+                                        <td>&nbsp;<a href="/abrechnungen/print/@a.jahr/@anr" target="_blank">P</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Anzahl:</td>
+                                    <td>@a.abrechnungen.size</td>
+                                    <td>Summe:</td>
+                                    <td>@("%.2f EUR" format a.sum)</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                }
+            </div>
+        </section>
+    </div>
+
+    <div id="abrechnung_details" class="grid_33 rightSide">
+        @(if (selAbrechnung.isDefined) {
+            <!--abrechnungen_details(selAbrechnung.get, controllers.GartenController.ablFrom)-->
+        })
+    </div>
+}

@@ -1,0 +1,94 @@
+@(jahr: Int, abr :Abrechnung, verein: Verein)
+
+@mitglied = @{abr.pachtvertrag.mitglied}
+@garten   = @{abr.pachtvertrag.garten}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abrechnung für @mitglied</title>
+    <link rel="stylesheet" media="all" href="@routes.Assets.at("stylesheets/print.css")">
+</head>
+<body>
+
+    <header>
+        <!--Kleingartenverein "Am Nelkentor" e.V. &bull; Marktsteig &bull; 09126 Chemnitz-->
+        <img src="@routes.Assets.at("images/vereinslogo.png")" alt="Vereinslogo" />
+    </header>
+
+    <section class="clearfix">
+        <p class="absender">Kleingartenverein "Am Nelkentor" e.V. - Vorstand Volker Frank - Augsburger Str. 56 - 09126 Chemnitz</p>
+        <p class="anschrift">
+            @mitglied.anrede<br />
+            @mitglied.vorname @mitglied.nachname<br />
+            @mitglied.adresse.str @mitglied.adresse.hausnr<br />
+            @mitglied.adresse.plz @mitglied.adresse.ort
+        </p>
+        <p class="details">
+            Garten Nr.: @garten.nr<br />
+            Abrechnungsnr.: @abr.nr<br />
+            Datum: @abr.datum.toString("dd.MM.yyyy")
+        </p>
+    </section>
+
+
+    <h2>Beiträge und Betriebskostenabrechnung für das Jahr @jahr</h2>
+
+
+    <article class="anschreiben">
+        <p>@mitglied.briefAnrede,</p>
+        <p>
+            der Kleingartenverein "Am Nelkentor" e.V. wünscht Ihnen noch ein gesundes neues Jahr und übersendet Ihnen
+            hiermit die Endabrechnung für das Jahr @jahr.
+            Bitte prüfen Sie die Richtigkeit der ermittelten Werte und überweisen Sie den ausgewiesenen Gesamtbetrag
+            von @("%.2f EUR" format abr.sum) bis zum @(abr.fällig.toString("dd.MM.yyyy")) auf unser Vereinskonto:
+            <dl class="clearfix">
+                <dt>Kontonr.:</dt><dd>@verein.kontonr</dd>
+                <dt>BLZ:</dt><dd>@verein.blz</dd>
+                <dt>Bank:</dt><dd>@verein.bank</dd>
+                <dt>Beitrag:</dt><dd>@("%.2f EUR" format abr.sum)</dd>
+                <dt>Verwendungszweck:</dt><dd>@jahr @abr.nr</dd>
+            </dl>
+        </p>
+
+        <p>Der ermittelte Gesamtbetrag ergibt sich aus folgenden Einzelpositionen:</p>
+        <table class="positionen">
+            <thead>
+                <tr>
+                    <th>Pos.</th>
+                    <th>Bezeichnung</th>
+                    <th>Menge</th>
+                    <th>Preis / Einheit</th>
+                    <th>Betrag [EUR]</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for((pos, i) <- abr.positionen.filter(_.sum > 0).zipWithIndex) {
+                    @if(pos.sum > 0) {
+                        <tr>
+                            <td>@(i+1))</td>
+                            <td>@pos.text</td>
+                            <td>@("%.1f %s" format (pos.menge, pos.einheit))</td>
+                            <td>@("%.2f" format pos.wert)</td>
+                            <td>@("%.2f" format pos.sum)</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td>Gesamtsumme</td>
+                    <td></td>
+                    <td></td>
+                    <td>@("%.2f" format abr.sum)</td>
+                </tr>
+            </tfoot>
+        </table>
+        <p class="fussnote">*Beitrag zur Abdeckung von z.B.: Winterdienst, Grundsteuer A, Aufwandsentschädigung Vorstand, Notarkosten, Kontoführungsgebühren, etc.</p>
+    </article>
+
+    <p>Mit freundlichen Grüßen</p>
+    <p>Der Vorstand</p>
+</body>
+</html>

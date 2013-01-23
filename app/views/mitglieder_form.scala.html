@@ -1,0 +1,73 @@
+@(mitForm: Form[Mitglied], formAction: Call = routes.MitgliederController.saveMitglied)
+@import helper._
+
+@form(action = formAction, args = 'id -> "savemitgliedform") {
+    <div class="grid_50">
+        <fieldset class="content boxshadow clearfix">
+            @inputText(
+                field = mitForm("nr"),
+                args = '_label -> "Mitgliedernr.", '_disabled -> true
+            )
+            @select(
+            field = mitForm("anrede"),
+            options = models.Sex.values.map(x => x.toString -> x.toString).toSeq,
+            args = '_label -> "Anrede"
+            )
+            @inputText(
+            field = mitForm("vorname"),
+            args = '_label -> "Vorname"
+            )
+            @inputText(
+            field = mitForm("nachname"),
+            args = '_label -> "Nachname"
+            )
+        </fieldset>
+    </div>
+    <div class="grid_50">
+
+        <fieldset class="content boxshadow clearfix">
+            @inputText(
+            field = mitForm("adresse.strasse"),
+            args = '_label -> "Strasse"
+            )
+            @inputText(
+            field = mitForm("adresse.hausnr"),
+            args = '_label -> "Hausnr."
+            )
+            @inputText(
+            field = mitForm("adresse.plz"),
+            args = '_label -> "PLZ"
+            )
+            @inputText(
+            field = mitForm("adresse.ort"),
+            args = '_label -> "Ort"
+            )
+            @inputText(
+            field = mitForm("adresse.land"),
+            args = '_label -> "Land"
+            )
+        </fieldset>
+    </div>
+    <div class="grid_50">
+
+        <fieldset class="content boxshadow clearfix">
+            @inputDate(
+            field = mitForm("dob"),
+            args = '_label -> "Geburtstag"
+            )
+
+            @inputText(
+            field = mitForm("tel"),
+            args = '_label -> "Telefon"
+            )
+            @select(
+                field = mitForm("typ"),
+                options = models.MitgliedsTyp.values.map(x => x.id.toString -> x.toString).toSeq,
+                args = '_label -> "Funktion", '_help -> ""
+            )
+        </fieldset>
+    </div>
+    <p class="buttons clear">
+        <input type="submit" id="submit">
+    </p>
+}

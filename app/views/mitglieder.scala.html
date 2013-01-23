@@ -1,0 +1,96 @@
+@(mitglieder: List[Mitglied], m: Option[Mitglied] = None, arbForm: Form[Arbeitsstunde] = MitgliederController.arbeitsstdForm)(implicit flash: Flash)
+@import helper._
+
+@sub = {
+    <ul>
+        <li><a href="/mitglieder/new" onclick="newMitglied(); return false;"><button>hinzufügen</button></a></li>
+        <li><a href="/mitglieder/saveall"><button>speichern</button></a></li>
+        <li><a href="/mitglieder/import"><button>importieren</button></a></li>
+    </ul>
+}
+@js = {
+    <script type="text/javascript">
+        function editMitglied(nr) {
+
+            var url = "/mitglieder/edit/" + nr
+            console.log(url);
+
+            $.get(url, function(result) {
+                $('<div />').html(result).dialog({
+                    title: "Mitglied Nr. " + nr + " editieren",
+                    modal: true,
+                    width: '800px'
+                });
+            });
+        }
+        function newMitglied() {
+
+        var url = "/mitglieder/new"
+
+            $.get(url, function(result) {
+                $('<div />').html(result).dialog({
+                        title: "neues Mitglied anlegen",
+                        modal: true,
+                        width: '800px'
+                });
+            });
+        }
+
+        function loadMitgliedDetails(nr) {
+            var url = "/mitglieder/details/" + nr
+            $.get(url, function(result) {
+                $('#mitglieder_details').html(result);
+            });
+        }
+    </script>
+}
+
+@main(title = "GartenApp2 goes Web! - Mitglieder", submenu = sub, javascript = js) {
+    <h2>Mitgliederliste</h2>
+
+    @(flash.data.map {
+        case ("info", msg) => <div class="msg_info">{msg}</div>
+        case ("error", msg) => <div class="msg_error">{msg}</div>
+    })
+    <div class="grid_66">
+        <div class="content boxshadow">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nr</th>
+                        <th>Vorname</th>
+                        <th>Nachname</th>
+                        <th>Garten</th>
+                        <th colspan="2">Optionen</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @mitglieder.map { m =>
+                    <tr onclick="window.location.href = '/mitglieder/@m.nr'">
+                        <td>@m.nr</td>
+                        <td>@m.nachname</td>
+                        <td>@m.vorname</td>
+                        <td>@m.garten</td>
+                        <td><a href="/mitglieder/delete/@m.nr">X</a>&nbsp;</td>
+                        <td>&nbsp;<a href="/mitglieder/edit/@m.nr" onclick="event.cancelBubble=true;editMitglied(@m.nr); return false;">E</a></td>
+                    </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Anzahl:</td>
+                        <td>@mitglieder.size</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <div id="mitglieder_details" class="grid_33 rightSide">
+        @if(m.isDefined) {
+            @mitglieder_details(m.get, arbForm)
+        }
+    </div>
+}

@@ -1,0 +1,6 @@
+@(mitForm: Form[Mitglied])
+@import helper._
+
+<div class="grid_100">
+    @mitglieder_form(mitForm, routes.MitgliederController.addMitglied)
+</div>

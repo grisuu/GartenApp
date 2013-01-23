@@ -1,0 +1,19 @@
+
+body { width: 17cm; font: 12pt Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif; }
+h2 { font-size: 20px; margin:10px 0; }
+header { text-align:right; margin:0 0 -10px 0}
+.anschrift { width:50%; float:left; }
+.details { width: 50%; float:left; text-align:right; color:#666;}
+.absender { font-size:8px; color:#333; text-decoration:underline; }
+
+.anschreiben { margin:30px 0; }
+.anschreiben dl dt { width: 33%; float:left }
+.anschreiben dl dd { width: 60%; float:left }
+
+.positionen { width:100%; font-size:10pt}
+.positionen td + td + td + td { text-align:right; }
+.positionen td + td + td + td + td { text-align:right; }
+.positionen tfoot { font-weight:bold }
+.fussnote { font-size:10px; color:#666 }
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }

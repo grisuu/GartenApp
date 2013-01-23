@@ -1,0 +1,50 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+# Mitglieder Actions
+GET     /mitglieder                 controllers.MitgliederController.getMitgliederListe(nr: Int ?= 0)
+GET     /mitglieder/import          controllers.MitgliederController.importMitglieder
+GET     /mitglieder/delete/:nr      controllers.MitgliederController.deleteCustomer(nr: Int)
+GET     /mitglieder/new             controllers.MitgliederController.newMitglied
+GET     /mitglieder/add             controllers.MitgliederController.addMitglied
+GET     /mitglieder/save            controllers.MitgliederController.saveMitglied
+GET     /mitglieder/saveall         controllers.MitgliederController.saveMitglieder
+GET     /mitglieder/details/:nr     controllers.MitgliederController.mitgliedDetails(nr: Int)
+GET     /mitglieder/show/:nr        controllers.MitgliederController.showCustomer(nr: Int)
+GET     /mitglieder/edit/:nr        controllers.MitgliederController.editCustomer(nr: Int)
+POST    /mitglieder/newarbeit/:nr   controllers.MitgliederController.processNewArbeitsstunden(nr: Int)
+GET     /mitglieder/:nr             controllers.MitgliederController.getMitgliederListe(nr: Int)
+GET     /mitglieder/:nr/delarbeitstd/:stdNr             controllers.MitgliederController.processDelArbStd(nr: Int, stdNr: Int)
+
+
+# Gaerten
+GET     /gaerten                            controllers.GartenController.getGartenList(nr: Int =-1)
+GET     /gaerten/add                        controllers.GartenController.processNewGarten
+GET     /gaerten/new                        controllers.GartenController.newGarten
+GET     /gaerten/show/:nr                   controllers.GartenController.showGarten(nr: Int)
+GET     /gaerten/details/:nr                controllers.GartenController.gartenDetails(nr: Int)
+GET     /gaerten/importAblesungen           controllers.GartenController.importAblesungen
+GET     /gaerten/processNewAblesung/:nr/:z  controllers.GartenController.processNewAblesung(nr: Int, z)
+GET     /gaerten/:nr                        controllers.GartenController.getGartenList(nr: Int)
+
+# Pachtverträge
+GET     /pachtvertraege             controllers.PachtvertragController.getPachtvertragList
+GET     /pachtvertraege/add         controllers.PachtvertragController.processNewPachtvertrag
+GET     /pachtvertraege/new         controllers.PachtvertragController.newPachtvertrag
+GET     /pachtvertraege/show/:nr    controllers.PachtvertragController.showPachtvertrag(nr: Int)
+GET     /pachtvertraege/detail/:nr  controllers.PachtvertragController.pachtvertragDetail(nr: Int)
+
+# Abrechnungen
+GET     /abrechnungen                       controllers.AbrechnungsController.getAbrechnungsList(nr: Int ?= 0)
+GET     /abrechnungen/new                   controllers.AbrechnungsController.newAbrechnung
+GET     /abrechnungen/add                   controllers.AbrechnungsController.processNewAbrechung
+GET     /abrechnungen/savetest              controllers.AbrechnungsController.saveTest
+GET     /abrechnungen/print/:jahr/:nr       controllers.AbrechnungsController.printAbrechnung(jahr: Int, nr: Int)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

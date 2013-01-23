@@ -1,0 +1,29 @@
+@(id: String, label: String, options: List[(String, String)], value: String = "", hint: String = "", state: String = "")
+
+@* Simple input option element. Only single selection are supported atm.
+Design based on Bootstrap2.
+
+param id the element ID of the input element
+param label the name of the input field so that the user knows what to
+enter
+param options the elements of the dropdown list. The key of the map isused
+as value of the element
+param value the initially selected value of the input element
+param hint give the user some additional information
+param state use 'warning', 'error', 'info', 'success' (see bootstrap)
+
+*@
+
+<div class="control-group @state">
+    <label class="control-label" for="@id">@label</label>
+    <div class="controls">
+        <select id="@id">
+            @options.map { o =>
+            <option value="@o._1">@o._2</option>
+            }
+        </select>
+        <span class="help-inline">@hint</span>
+
+    </div>
+
+</div>

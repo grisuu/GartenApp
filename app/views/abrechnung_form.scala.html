@@ -1,0 +1,54 @@
+@(abrForm: Form[AbrechnungsDaten])
+@import helper._
+
+    <div class="grid_33">
+        <fieldset class="content boxshadow">
+            @inputText(
+                field = abrForm("jahr"),
+                args = '_label -> "Jahr"
+            )
+            @checkbox(
+                field = abrForm("pacht_all"),
+                args = '_label -> ("Alle"), '_class -> "keyvalue"
+            )
+            @for((nr, m) <- (PachtvertragController.pachtverträge.list)) {
+                @checkbox(
+                    field = abrForm("pacht[" + nr + "]"),
+                    args = '_label -> m.mitglied.nachVorname, 'value -> nr, '_class -> "keyvalue"
+                )
+            }
+        </fieldset>
+    </div>
+    <div class="grid_33 clearfix">
+        <fieldset class="content boxshadow">
+            @inputText(
+                field = abrForm("umlage"),
+                args = '_label -> "Umlagepauschale"
+            )
+
+            @inputText(
+                field = abrForm("beitrag"),
+                args = '_label -> "Mitgliederbeitrag Stadtverband"
+            )
+
+            @inputText(
+                field = abrForm("strom"),
+                args = '_label -> "Verbrauchskosten für Strom", '_help -> "die Unterzählergebühr wird seperat mit berechnet"
+            )
+
+            @inputText(
+                field = abrForm("wasser"),
+                args = '_label -> "Verbrauchskosten für Wasser", '_help -> "die Unterzählergebühr wird seperat mit berechnet"
+            )
+
+            @inputText(
+                field = abrForm("pauschale"),
+                args = '_label -> "Pauschale", '_help -> "sonstige Kosten, die pauschal umgelegt werden"
+            )
+        </fieldset>
+        <p class="buttons clear">
+            <input type="submit" id="submit">
+        </p>
+    </div>
+
+

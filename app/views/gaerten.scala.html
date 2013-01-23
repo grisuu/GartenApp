@@ -1,0 +1,71 @@
+@(gaerten: List[Garten], selGarten: Option[Garten] = None)(implicit flash: Flash)
+@import helper._
+
+@sub = {
+    <ul>
+        <li><a href="/gaerten/new"><button>hinzufügen</button></a></li>
+        <li><a href="/gaerten/add"><button>speichern</button></a></li>
+        <li><a href="/gaerten/importAblesungen"><button>Ablesungen imp.</button></a></li>
+    </ul>
+}
+
+@js = {
+    <script type="text/javascript">
+        function loadGartenDetails(nr) {
+            var url = "/gaerten/details/" + nr
+            $.get(url, function(result) {
+                $('#garten_details').html(result);
+            });
+        }
+
+    </script>
+}
+@main(title = "GartenApp2 goes Web! - Gärten", submenu = sub, javascript = js) {
+    <h2>Gartenliste</h2>
+    @(flash.data.map {
+        case ("info", msg) => <div class="msg_info">{msg}</div>
+        case ("error", msg) => <div class="msg_error">{msg}</div>
+    })
+    <div class="grid_66">
+        <div class="content boxshadow">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nr</th>
+                        <th>Fläche</th>
+                        <th>Laube</th>
+                        <th>Grundsteuer B</th>
+                        <th>Pächter</th>
+                        <th colspan="2">Optionen</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @gaerten.map { g =>
+                    <tr onclick="loadGartenDetails(@g.nr)">
+                        <td>@g.nr</td>
+                        <td>@{g.fläche}</td>
+                        <td>@g.laube</td>
+                        <td>@g.grundB</td>
+                        <td>Pächter</td>
+                        <td><a href="/gaerten/delete/@g.nr">X</a>&nbsp;</td>
+                        <td>&nbsp;<a href="/gaerten/show/@g.nr">D</a></td>
+                    </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Anzahl:</td>
+                        <td>@gaerten.size</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <div id="garten_details" class="grid_33" style="position:fixed; right:0px;">
+        @(if (selGarten.isDefined) {
+            garten_details(selGarten.get, controllers.GartenController.ablFrom)
+        })
+    </div>
+}

@@ -1,0 +1,49 @@
+@(mitglied: Mitglied, arbeitsForm: Form[Arbeitsstunde])
+@import helper._
+<div class="content boxshadow">
+    <h4>Details:</h4>
+    <dl class="keyvalue clearfix">
+        <dt>Mitgliedernr:</dt><dd>@mitglied.nr</dd>
+        <dt>Anrede:</dt><dd>@mitglied.anrede</dd>
+        <dt>Vorname:</dt><dd>@mitglied.vorname</dd>
+        <dt>Nachname:</dt><dd>@mitglied.nachname</dd>
+        <dt>Adresse:</dt><dd>@Html(mitglied.adresse.toHtml)</dd>
+        <dt>&nbsp;</dt><dd>&nbsp;</dd>
+        <dt>Geburtstag:</dt><dd>@mitglied.dob.toString("dd.MM.yyyy")</dd>
+        <dt>erstellt am:</dt><dd>@mitglied.createDate.toString("dd.MM.yyyy")</dd>
+        <dt>Funktion:</dt><dd>@mitglied.typ</dd>
+    </dl>
+
+    <h4>Kontakt:</h4>
+    <dl class="keyvalue clearfix">
+        @mitglied.kontaktList.map { k =>
+            <dt>@k.typ:</dt><dd>@k.wert</dd>
+        }
+    </dl>
+
+    @form(action = routes.MitgliederController.processNewArbeitsstunden(mitglied.nr), args = 'id -> "arbeitsstdform", 'method -> "POST") {
+        <h4>Arbeitsstunden:</h4>
+        <dl class="keyvalue clearfix">
+            <dt>
+                @inputText(
+                field = arbeitsForm("arbstd"),
+                args = '_label -> "Arbeitsstunden"
+                )
+            </dt>
+            <dd>
+                @inputText(
+                field = arbeitsForm("arbstdtext"),
+                args = '_label -> "Beschreibung"
+                )
+            </dd>
+            <input type="submit" value="Ok" style="float:right" />
+            @mitglied.arbeitsStunden.map { a =>
+                <dt>@("%.1f Std." format a.dauer)</dt>
+                <dd>
+                    @a.text
+                    <a href="/mitglieder/@mitglied.nr/delarbeitstd/@mitglied.arbeitsStunden.indexOf(a)" style="float:right"><button type="button" value="X">X</button></a>
+                </dd>
+            }
+        </dl>
+    }
+</div>
