@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97aa0a2e-b0f7-4de8-a380-2dbdc5ba9753" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/mitglieder_details.scala.html" afterPath="$PROJECT_DIR$/app/views/mitglieder_details.scala.html" />
-    </list>
+    <list default="true" id="97aa0a2e-b0f7-4de8-a380-2dbdc5ba9753" name="Default" comment="" />
     <ignored path="gartenApp2.1.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="97aa0a2e-b0f7-4de8-a380-2dbdc5ba9753" time="1358981306533" ignored="false" />
@@ -104,10 +102,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mitglieder_details.scala.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="mitglieder_details.scala.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/mitglieder_details.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="48" selection-start="678" selection-end="678" vertical-scroll-proportion="0.21984217">
+            <state line="13" column="48" selection-start="678" selection-end="678" vertical-scroll-proportion="-8.125">
               <folding />
             </state>
           </provider>
@@ -122,10 +120,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="application.conf" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/conf/application.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="39" selection-start="977" selection-end="998" vertical-scroll-proportion="0.5554336">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MitgliederController.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/MitgliederController.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="69" selection-start="4039" selection-end="4039" vertical-scroll-proportion="0.0">
+            <state line="160" column="29" selection-start="5404" selection-end="5404" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#21#66#0" expanded="true" />
               </folding>
@@ -137,15 +144,6 @@
         <entry file="file://$PROJECT_DIR$/app/tools/fileio/CsvReader.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state line="27" column="0" selection-start="775" selection-end="775" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Wasserzaehler.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/Wasserzaehler.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="18" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -164,15 +162,6 @@
         <entry file="file://$PROJECT_DIR$/app/models/Zaehler.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state line="15" column="56" selection-start="241" selection-end="241" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="abrechnungen.scala.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/abrechnungen.scala.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="31" selection-start="2500" selection-end="2500" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -549,7 +538,7 @@
   <component name="PropertiesComponent">
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/controllers" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
@@ -798,21 +787,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/abrechnung_print.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="32" selection-start="1262" selection-end="1262" vertical-scroll-proportion="-0.625" />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/play/play_2.9.1/jars/play_2.9.1-2.0.2.jar!/play/api/Play.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="15" selection-start="253" selection-end="253" vertical-scroll-proportion="0.067567565" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/routes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="80" selection-start="622" selection-end="633" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.ivy2/cache/play/anorm_2.9.1/jars/anorm_2.9.1-2.0.2.jar!/anorm/SqlParser.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="6" selection-start="912" selection-end="912" vertical-scroll-proportion="0.16891892" />
@@ -821,13 +795,6 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/MainController.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="7" selection-start="87" selection-end="87" vertical-scroll-proportion="0.04709748" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/application.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="39" selection-start="977" selection-end="998" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Wasserzaehler.scala">
@@ -858,20 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/Build.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="36" selection-start="449" selection-end="449" vertical-scroll-proportion="0.27991217">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/evolutions/default/1.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="21" selection-start="135" selection-end="135" vertical-scroll-proportion="-3.1034484">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/tools/fileio/CsvReader.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="0" selection-start="775" selection-end="775" vertical-scroll-proportion="0.0">
@@ -879,12 +832,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/MitgliederController.scala">
+    <entry file="file://$PROJECT_DIR$/app/views/mitglieder_details.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="69" selection-start="4039" selection-end="4039" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#21#66#0" expanded="true" />
-          </folding>
+        <state line="13" column="48" selection-start="678" selection-end="678" vertical-scroll-proportion="-8.125">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -895,9 +846,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/mitglieder_details.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/views/abrechnungen.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="48" selection-start="678" selection-end="678" vertical-scroll-proportion="0.21984217">
+        <state line="57" column="31" selection-start="2500" selection-end="2500" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/build.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/Build.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="7" selection-start="56" selection-end="56" vertical-scroll-proportion="0.032930844">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/MitgliederController.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="160" column="29" selection-start="5404" selection-end="5404" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#21#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/evolutions/default/1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="21" selection-start="135" selection-end="135" vertical-scroll-proportion="-3.1034484">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/application.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="39" selection-start="977" selection-end="998" vertical-scroll-proportion="0.5554336">
           <folding />
         </state>
       </provider>
@@ -954,7 +949,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>gartenApp2.1</last-edited>
+          <last-edited>gartenApp2.1-build</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
