@@ -190,12 +190,12 @@ object GartenController extends Controller {
     )
   }
 
-  def addAblesung(zähler: Zähler, abl: Ablesung) = {
+  def addAblesung(zähler: Zaehler, abl: Ablesung) = {
     zähler.ablesungen ::= abl
     Logger.add("neue Ablesung %s für Zähler %s" format (abl, zähler))
   }
 
-  def delAblesung(zähler: Zähler, abl: Ablesung) = {
+  def delAblesung(zähler: Zaehler, abl: Ablesung) = {
     zähler.ablesungen = zähler.ablesungen.filterNot(_ eq abl)
     Logger.add("Ablesung %s für Zähler %s wurde gelöscht" format (abl, zähler))
   }

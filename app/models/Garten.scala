@@ -11,8 +11,8 @@ import util.Random
  */
 case class Garten(nr: Int, var fläche: Double, var laube: Double, var grundB: Double = 0.0) {
 
-  val wasseruhr   = new Wasserzähler(Random.nextInt(Int.MaxValue))
-  val stromzähler = new Stromzähler(Random.nextInt(Int.MaxValue))
+  val wasseruhr   = new Wasserzaehler(Random.nextInt(Int.MaxValue))
+  val stromzähler = new Stromzaehler(Random.nextInt(Int.MaxValue))
 
   override def toString = "Garten Nr. %3d" format nr
 }
