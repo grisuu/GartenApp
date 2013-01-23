@@ -140,10 +140,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Build.scala" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Build.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/Build.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0">
+            <state line="11" column="49" selection-start="289" selection-end="289" vertical-scroll-proportion="0.1481888">
               <folding />
             </state>
           </provider>
@@ -167,10 +167,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Zaehler.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Zaehler.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/Zaehler.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="18" selection-start="163" selection-end="165" vertical-scroll-proportion="0.18111965">
+            <state line="15" column="56" selection-start="241" selection-end="241" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -212,12 +212,12 @@
         <option value="$PROJECT_DIR$/app/tools/fileio/CsvReader.scala" />
         <option value="$PROJECT_DIR$/app/controllers/MitgliederController.scala" />
         <option value="$PROJECT_DIR$/app/models/Mitglied.scala" />
-        <option value="$PROJECT_DIR$/project/Build.scala" />
         <option value="$PROJECT_DIR$/app/models/Wasserzaehler.scala" />
         <option value="$PROJECT_DIR$/app/models/Stromzähler.scala" />
         <option value="$PROJECT_DIR$/app/models/Stromzarhler.scala" />
         <option value="$PROJECT_DIR$/app/models/Stromzaehler.scala" />
         <option value="$PROJECT_DIR$/app/models/Zaehler.scala" />
+        <option value="$PROJECT_DIR$/project/Build.scala" />
       </list>
     </option>
   </component>
@@ -704,7 +704,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1337" y="24" width="1863" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296643" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -720,7 +720,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13263622" sideWeight="0.46645367" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296643" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13263622" sideWeight="0.97018105" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13263622" sideWeight="0.97018105" order="1" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -853,13 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/Build.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Wasserzaehler.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="18" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0">
@@ -883,7 +876,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Zaehler.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="18" selection-start="163" selection-end="165" vertical-scroll-proportion="0.18111965">
+        <state line="15" column="56" selection-start="241" selection-end="241" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/Build.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="49" selection-start="289" selection-end="289" vertical-scroll-proportion="0.1481888">
           <folding />
         </state>
       </provider>
