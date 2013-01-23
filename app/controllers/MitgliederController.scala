@@ -111,8 +111,8 @@ object MitgliederController extends Controller {
         BadRequest(views.html.mitglieder_new(formWithErrors))
       }, {
         case neu: Mitglied =>
-
-          Redirect(routes.MitgliederController.getMitgliederListe(m.nr)).flashing("info" -> "Mitglied wurde geändert")
+          Mitglied.update(neu)
+          Redirect(routes.MitgliederController.getMitgliederListe(neu.nr)).flashing("info" -> "Mitglied wurde geändert")
         case e => println(e); BadRequest("geht ne")
       }
     )

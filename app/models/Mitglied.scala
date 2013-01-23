@@ -90,7 +90,27 @@ object Mitglied {
     }
   }
 
-  def update()
+  def update(m: Mitglied) {
+    DB.withConnection { implicit c =>
+      SQL("""UPDATE mitglieder set anrede = {anrede}, vorname = {vorname}, nachname = {nachname}, strasse = {strasse},
+             hausnr = {hausnr}, plz = {plz}, ort = {ort}, land = {land}, create_date = {create_date}, geburtstag = {geburtstag}, position = {position}
+             WHERE id = {id}
+          """).on(
+        'anrede       -> m.anrede.id,
+        'vorname      -> m.vorname,
+        'nachname     -> m.nachname,
+        'strasse      -> m.adresse.str,
+        'hausnr       -> m.adresse.hausnr,
+        'plz          -> m.adresse.plz,
+        'ort          -> m.adresse.ort,
+        'land         -> m.adresse.land,
+        'create_date  -> m.createDate.toDate,
+        'geburtstag   -> m.dob.toDate,
+        'position     -> m.position.id,
+        'id           -> m.nr
+      ).executeUpdate()
+    }
+  }
 
   def delete(id: Int) = {
     DB.withConnection { implicit c =>
