@@ -11,7 +11,7 @@ import collection.immutable.TreeMap
  * Time: 14:21
  */
 
-object Logger {
+object Logga {
   var output :(String) => Unit = println
   var logs: TreeMap[Date, String] =  new TreeMap()(Ordering[Date].reverse)
 
